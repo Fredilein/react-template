@@ -1,12 +1,12 @@
-import React from 'react';
+import * as serviceWorker from './serviceWorker';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { makeMainRoutes } from './routes';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const routes = makeMainRoutes();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+ReactDOM.render(
+  routes,
+  document.getElementById('root')
+);
 serviceWorker.unregister();
